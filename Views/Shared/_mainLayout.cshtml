@@ -1,0 +1,32 @@
+﻿<html>
+<head>
+    <title>Stock Manintenance</title>
+</head>
+<body style="background-color:beige;">
+    <table border="0" width="100%" height="100%">
+        <tr><td colspan="2"><div style="background-color:greenyellow; color:forestgreen; text-align:center;"><h1>Stock Management</h1></div></td></tr>
+        <tr>
+            <td width="25%" valign="top">
+                <div id="Menu">
+                    @Html.ActionLink("Home", "Index", "Login")<br />
+                    @Html.ActionLink("About Us", "Index", "Login")<br />
+                    @Html.ActionLink("Contact Us", "Index", "Login")<br />
+                    @Html.ActionLink("Stock Maintenance", "Index", "Stock")<br />
+                </div>
+            </td>
+            <td width="75%">
+                <div id="Content">
+                    @RenderBody()
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - Stock Management</p>
+                </footer>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
