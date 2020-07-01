@@ -5,11 +5,7 @@
     4. Service - Class Library
     5. Stock Management - Web Application
 
-2.Login / Authentication
+2.Login / Authentication - Done
 3.Log4Net implementation / Exception Handling
-4.CRUD in gridview / Validation
+4.CRUD in gridview - Done / Validation - Pending
 5.Cloud Deployment
-
-Login.cs
-User Id
-Password
