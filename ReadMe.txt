@@ -9,7 +9,3 @@
 3.Log4Net implementation / Exception Handling
 4.CRUD in gridview / Validation
 5.Cloud Deployment
-
-Login.cs
-User Id
-Password
