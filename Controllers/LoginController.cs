@@ -29,6 +29,41 @@ namespace StockMaintenance.Controllers
         }
         public ActionResult Login()
         {
+            ///It will passing Layout name to View so as Login View can use _login layout for master template
+            return View("Login", "_login");
+        }
+        
+        [HttpPost]
+        public ActionResult Login(LoginModel loginModel)
+        {
+            LoginModel retrieveLoginInfo = _loginService.getAccountDetails(loginModel.UserName);
+            if (retrieveLoginInfo.IsValid)
+            {
+                ViewBag.ResultMessage = "It is valid user. Welcome " + retrieveLoginInfo.UserName;
+                return RedirectToAction("Index", "Stock", loginModel);
+                ///* ViewBag is one of the state management techninque in MVC
+                ///* It is use to transfer data from Controller to View
+                ///* ViewBag is an object of Dynamic propery which was introduced in C#4.0
+                ///* It is wrapper around ViewData 
+                ///* typecasting is not required                
+            }
+            else
+                ViewBag.ResultMessage = "It is fake user";
+            return View();
+        }
+
+        public ActionResult Home()
+        {
+            return View();
+        }
+
+        public ActionResult AboutUs()
+        {
+            return View();
+        }
+
+        public ActionResult ContactUs()
+        {
             return View();
         }
     }

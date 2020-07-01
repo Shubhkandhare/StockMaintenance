@@ -21,8 +21,9 @@ namespace StockMaintenance.Controllers
             _stockService = new StockService(new StockRepository(dataAccess));
         }
         // GET: Stock
-        public ActionResult Index()
+        public ActionResult Index(LoginModel loginModel)
         {
+            ViewBag.UserName = loginModel.UserName;
             DataTable dtStock = new DataTable();
             dtStock = _stockService.GetAllStock();
             List<StockModel> stockModels = new List<StockModel>();

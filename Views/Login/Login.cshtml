@@ -1,7 +1,37 @@
-﻿
+﻿@model Models.LoginModel
+
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "User Login Screen";
 }
 
-<h2>Login</h2>
-
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    @ViewBag.ResultMessage
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+                &nbsp;&nbsp;
+                @Html.TextBoxFor(model => model.UserName, new { placeholder = "Enter Username", @class = "form-input", @style="width:150px" })
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div style="height:10px"></div>
+        <div class="form-group" style="text-align:left;">
+            <div class="col-md-10">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" }) &nbsp;&nbsp;&nbsp;&nbsp;
+                @Html.PasswordFor(model => model.Password, new { placeholder = "Enter Password", @class = "form-input", style = "width: 150px" })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div style="height:25px"></div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10" style="text-align:center;">
+                <input type="submit" value="Login" class="btn btn-default" />
+                <input type="reset" value="Reset" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
