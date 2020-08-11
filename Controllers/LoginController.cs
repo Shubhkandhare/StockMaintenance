@@ -32,7 +32,19 @@ namespace StockMaintenance.Controllers
             ///It will passing Layout name to View so as Login View can use _login layout for master template
             return View("Login", "_login");
         }
-        
+
+        public ActionResult Index1() 
+        {
+            return View();
+        }
+        public ActionResult Sum(int a, int b)
+        {
+            int c = a + b;
+            if (a == 0 || b == 0) { throw new Exception("Input parameters are null."); }
+            ViewBag.Sum = c;
+            TempData["Result"] = c;
+            return View();
+        }
         [HttpPost]
         public ActionResult Login(LoginModel loginModel)
         {

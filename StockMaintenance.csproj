@@ -123,6 +123,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\SessionMgntController.cs" />
     <Compile Include="Controllers\StockController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -173,6 +174,9 @@
     <Content Include="Views\Login\Home.cshtml" />
     <Content Include="Views\Login\AboutUs.cshtml" />
     <Content Include="Views\Login\ContactUs.cshtml" />
+    <Content Include="Views\Login\Index1.cshtml" />
+    <Content Include="Views\Login\Sum.cshtml" />
+    <Content Include="Views\SessionMgnt\AboutUs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
